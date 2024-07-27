@@ -1,0 +1,31 @@
+stage:
+  - pre
+  - test
+  - deploy
+
+pre:
+  stage: pre
+  tags:
+    - server1
+  script:
+    - sudo -H pip3 install poetry
+    - poetry install
+
+test:
+  stage: test
+  tags:
+    - server1
+  script:
+    - poetry run pytest tests --cov=app --cov-branch --cov-report=term --cov-fail-under=60
+    - poetry run flake8 app tests --max-complexity 8
+    - poetry run bandit -r app/
+    - poetry run mutmut run --paths-to-mutate app
+
+deploy:
+  stage: deploy
+  tags:
+    - server1
+  script:
+    - poetry run python app/bot.py
+  only:
+    - master

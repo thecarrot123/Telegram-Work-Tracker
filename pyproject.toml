@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "the-mighty-todolist-telegram-bot"
+version = "0.1.0"
+description = ""
+authors = ["Murhaf Alawir <94635412+thecarrot123@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-telegram-bot = {extras = ["job-queue"], version = "^21.1.1"}
+pytest = "^8.1.1"
+bandit = "^1.7.8"
+flake8 = "^7.0.0"
+autopep8 = "^2.1.0"
+black = "^24.4.2"
+isort = "^5.13.2"
+python-dotenv = "^1.0.1"
+pytest-asyncio = "^0.23.6"
+pytest-cov = "^5.0.0"
+radon = "^6.0.1"
+mutmut = "^2.4.5"
+google-api-python-client = "^2.127.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

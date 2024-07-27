@@ -1,0 +1,8 @@
+.env
+task.db
+__pycache__/
+.pytest_cache/
+.venv/
+.coverage
+.mutmut-cache
+sheets_key.json
